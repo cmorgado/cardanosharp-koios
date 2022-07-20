@@ -130,6 +130,14 @@ foreach (var tm in transactionMetadata.Content)
 }
 Console.WriteLine();
 
+Console.WriteLine("Get Transaction Metadata labels ");
+var transactionMetadataLabels = transactionClient.GetTransactionsMetadataLabels(10, 1).Result;
+foreach (var ai in transactionMetadataLabels.Content)
+{
+    Console.WriteLine(JsonSerializer.Serialize(ai));
+}
+Console.WriteLine();
+
 // Get Transaction Metadata
 // throwing 404
 // Console.WriteLine("Get Transaction Status");

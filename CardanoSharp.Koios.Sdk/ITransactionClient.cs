@@ -26,7 +26,13 @@ namespace CardanoSharp.Koios.Sdk
             [AliasAs("limit")]int? limit = null, 
             [AliasAs("offset")]int? offset = null, 
             [Header("Prefer")] string prefer = null);
-        
+
+        [Get("/tx_metalabels")]
+        Task<ApiResponse<TransactionMetadataLabel[]>> GetTransactionsMetadataLabels(
+        [AliasAs("limit")] int? limit = null,
+        [AliasAs("offset")] int? offset = null,
+        [Header("Prefer")] string prefer = null);
+
         [Post("/tx_status")]
         Task<ApiResponse<TransactionStatus[]>> GetTransactionStatus([Body] GetTransactionRequest request, 
             [AliasAs("limit")]int? limit = null, 
